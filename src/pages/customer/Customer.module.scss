@@ -1,0 +1,32 @@
+.customer{
+  &__header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #efefef;
+    padding: 10px;
+    border-radius: 4px;
+    box-shadow: #e9efd5;
+  }
+  &__form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  &__content{
+    height: calc(100vh - 130px);
+    margin-top: 10px;
+    padding: 10px;
+    overflow-y: auto;
+    &__operations{
+      display: flex;
+      justify-content: end;
+      gap: 5px;
+    }
+    &__detail{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}

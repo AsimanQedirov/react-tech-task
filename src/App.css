@@ -1,0 +1,23 @@
+.App{
+    max-width: 98%;
+    margin: auto;
+    padding-top: 15px;
+}
+.custom-input{
+    min-height: 40px;
+    border-radius: 5px;
+    border:1px solid #cbcbcb;
+    padding-left: 10px;
+}
+.custom-input:focus{
+    outline: none;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
