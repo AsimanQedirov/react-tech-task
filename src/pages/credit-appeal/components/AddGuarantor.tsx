@@ -5,7 +5,8 @@ import {
     Alert,
     Button,
     Checkbox,
-    Divider, Snackbar,
+    Divider,
+    Snackbar,
     Table,
     TableBody,
     TableCell,
@@ -18,16 +19,16 @@ import {StatusEnum} from "../../../app/types/common";
 import LoadingSkeleton from "../../../components/LoadingSkeleton";
 import CreateNewGuarantor from "./CreateNewGuarantor";
 import GuarantorSearch from "./GuarantorSearch";
-import {useAppDispatch, useAppSelector} from "../../../app/store/store";
-import {CreditAppealActions} from "../features/creditAppealSlice";
+import {useAppSelector} from "../../../app/store/store";
 import {IGuarantor} from "../types/common";
 
 interface IProps {
     guarantorRef: MutableRefObject<HTMLElement | undefined>,
-    submitted(key : string,selectedRows : Array<IGuarantor>) : void
+
+    submitted(key: string, selectedRows: Array<IGuarantor>): void
 }
 
-const AddGuarantor: FC<IProps> = ({guarantorRef , submitted}) => {
+const AddGuarantor: FC<IProps> = ({guarantorRef, submitted}) => {
     const [response, setResponse] = useState<{
         loading: string,
         data: Array<IGuarantor>
@@ -61,14 +62,14 @@ const AddGuarantor: FC<IProps> = ({guarantorRef , submitted}) => {
     }
 
     const saveSelectedRows = () => {
-        if(selectedRows.length === 0){
+        if (selectedRows.length === 0) {
             setOpenSnack(true);
-            setTimeout(()=>{
+            setTimeout(() => {
                 setOpenSnack(false)
-            },2000)
+            }, 2000)
             return
         }
-        submitted("guarantors" , selectedRows);
+        submitted("guarantors", selectedRows);
     }
 
     useEffect(() => {
